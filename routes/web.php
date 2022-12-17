@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EcommerceController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,7 @@ use App\Http\Controllers\AdminController;
 //Route::get('/', function () {return view('welcome');});
 Route::get('/',[EcommerceController::class,'index'])->name('home');
 Route::get('/shop.product',[EcommerceController::class,'shopProduct'])->name('shop-product');
+Route::get('/single.product',[EcommerceController::class,'singleProduct'])->name('single-product');
 
 
 
@@ -24,4 +26,8 @@ Route::get('/shop.product',[EcommerceController::class,'shopProduct'])->name('sh
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'), 'verified'])->group(function () {
 //    Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+    Route::get('/add-product',[ProductController::class,'addProduct'])->name('add.product');
+    Route::get('/manage-product',[ProductController::class,'manageProduct'])->name('manage.product');
+    Route::post('/new-product',[ProductController::class,'saveProduct'])->name('new.product');
+
 });

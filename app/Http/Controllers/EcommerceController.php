@@ -14,4 +14,8 @@ class EcommerceController extends Controller
     {
         return view('frontEnd.shop.shop');
     }
+    public function singleProduct()
+    {
+        return view('frontEnd.shop.single-product');
+    }
 }
