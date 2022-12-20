@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('brand_name');
             $table->text('description');
             $table->text('image');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

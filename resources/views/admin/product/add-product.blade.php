@@ -9,9 +9,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Add product</h3></div>
-                        <div class="card-body">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5 mb-5">
+                        <div class="card-header">
+                            <h3 class="text-center font-weight-light my-4">Add product</h3>
+                            <p>{{session('massage')}}</p>
+                        </div>
+                        <div class="card-body ">
                             <form action="{{route('new.product')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-floating mb-3">
@@ -48,9 +51,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer text-center py-3">
-                            <div class="small"><button href="login.html">Have an account? Go to login</button></div>
-                        </div>
+
                     </div>
                 </div>
             </div>

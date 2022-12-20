@@ -70,21 +70,33 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="product-images">
-                                    <div class="product-main-img">
-                                        <img src="{{asset('frontEndAssets')}}/assets/img/product-2.jpg" alt="">
+                                    <div class="product-main-img ">
+{{--                                        <img src="{{asset('frontEndAssets')}}/assets/img/product-2.jpg" alt="">--}}
+                                        <img src="{{asset(asset($product->image))}}" alt=""  >
                                     </div>
-                                    <div class="product-gallery">
-                                        <img src="{{asset('frontEndAssets')}}/assets/img/product-thumb-1.jpg" alt="">
-                                        <img src="{{asset('frontEndAssets')}}/assets/img/product-thumb-2.jpg" alt="">
-                                        <img src="{{asset('frontEndAssets')}}/assets/img/product-thumb-3.jpg" alt="">
-                                    </div>
+                                        <div class="col-sm-12 ms-0">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <img src="{{asset(asset($product->image))}}" alt="">
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <img src="{{asset(asset($product->image))}}" alt="">
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <img src="{{asset(asset($product->image))}}" alt="">
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <img src="{{asset(asset($product->image))}}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="product-inner">
-                                    <h2 class="product-name">Sony Smart TV - 2015</h2>
+                                    <h2 class="product-name">{{$product->name}}</h2>
                                     <div class="product-inner-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
+                                        <ins>${{number_format($product->price)}}</ins> <del>$100.00</del>
                                     </div>
                                     <form action="#" class="cart">
                                         <div class="quantity">
